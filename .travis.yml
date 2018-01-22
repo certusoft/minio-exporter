@@ -5,7 +5,7 @@ go:
 before_deploy:
 - git config --local user.name "dfredell"
 - git config --local user.email "dan.fredell@gmail.com"
-- git tag "$(date +'%Y-%m-%d-%H:%M:%S')-$(git log --format=%h -1)"
+- git tag "$(date +'%Y-%m-%dT%H-%M-%S')-$(git log --format=%h -1)"
 
 deploy:
   provider: releases
