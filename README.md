@@ -3,6 +3,8 @@ MINIO EXPORTER
 
 A Prometheus exporter for Minio cloud storage server
 
+[![Build Status](https://travis-ci.org/joe-pll/minio-exporter.svg?branch=master)](https://travis-ci.org/joe-pll/minio-exporter)
+
 Build and launch the exporter as following.  
 ```bash
 make
