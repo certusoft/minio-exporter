@@ -41,7 +41,7 @@ test:
 
 get_dep:
 	@echo "... getting dependencies"
-	@$(GO) get -d
+	@dep ensure
 
 docker: docker_build docker_push
 	@echo "... docker building and pushing"

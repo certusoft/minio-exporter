@@ -1,13 +1,12 @@
 language: go
 sudo: false
 go:
-- 1.9.3
+- 1.9.x
 
 before_deploy:
 - git config --local user.name "dfredell"
 - git config --local user.email "dan.fredell@gmail.com"
 - git tag "$(date +'%Y-%m-%dT%H-%M-%S')-$(git log --format=%h -1)"
-- pwd && ls
 
 deploy:
   provider: releases
