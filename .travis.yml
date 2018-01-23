@@ -13,7 +13,7 @@ deploy:
   skip_cleanup: true
   api_key:
     secure: MCQRRYZ5iv42p+ywSb46Uuumz24yzXxtJjloCyHJaJECTmfmeXp6bSvdkPCANmEgcsepAS+QWxIrMb1X/PhWwm+TPWDSA9Lxmdi/+5mph41xAx3f+mv7AgmdHmLXiyVGFm0br806EFFC13ojfLjXJf6tXC+BJ8Ztt8RL2YgHE4ZzxDJrZYKhlBOaDSPii13jCipaA5mVIpYf2S3k0xqgu6l/RGTeyrnqHsm2vifocBnWcKwDUdKLLwxXPMfYxgyQdVaMgJvkVnkAS5t9Imh0Ne2ej1a7biWlk8uF+BaAU2l+dhIop0T6P+/gLR97HaI/lDkOwMYPx/OXMqcgo+3XH98fACjUV/UGBTF5fZl+OjE7iAVEC3kD8VzjNMLxlCdNPf8H/gHXpIkbRc9HFAZvrrMLwEr+jLWB1BL5xFbHxz3k9pB4rQ6IgU7JxF0RRu0fnauhJuGdd1OlXwCJ/FxoOy3JVG2+UJJ+tMg4h9+yFu/xthbnQQcN/vxuIKkS42nwDqq/m8Dse58m3XULR+TMwGabcVaiQHCcNKutonWPIQ9KMDm2iUWZOCtxc1178MY65Z6W4JpQaTGIlwXkMC7g5dMBS6VPdGX3mbnF98TlLKDfaRm3tggtWlfS0swt4xcdDwl8VwAeTZew7aaj/NYs3rr6shl0h0UD/lxEfj5Psrk=
-  file: "minio-exporter"
+  file: "minio_exporter"
   on:
     repo: certusoft/minio-exporter
     branch: travis-ci
