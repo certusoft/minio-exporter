@@ -3,16 +3,22 @@ sudo: false
 go:
 - 1.9.x
 
+env:
+  - DEP_VERSION="0.3.2"
+
+before_install:
+  # Download the binary to bin folder in $GOPATH
+  - curl -L -s https://github.com/golang/dep/releases/download/v${DEP_VERSION}/dep-linux-amd64 -o $GOPATH/bin/dep
+  # Make the binary executable
+  - chmod +x $GOPATH/bin/dep
+
+install:
+  - make get_dep
+
 before_deploy:
 - git config --local user.name "dfredell"
 - git config --local user.email "dan.fredell@gmail.com"
 - git tag "$(date +'%Y-%m-%dT%H-%M-%S')-$(git log --format=%h -1)"
-
-install:
-  # Add Godeps dependencies to GOPATH and PATH
-  - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
-  - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
-  - make get_dep
 
 deploy:
   provider: releases
