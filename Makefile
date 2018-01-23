@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-GO       ?= GO15VENDOREXPERIMENT=1 go
+GO       ?= go
 GOPATH   := $(firstword $(subst :, ,$(shell $(GO) env GOPATH)))
 TARGET    = minio_exporter
 
@@ -27,7 +27,7 @@ pkgs := $(shell $(GO) list)
 
 all: format build test
 
-build: get_dep
+build:
 	@echo "... building binaries"
 	@CGO_ENABLED=0 $(GO) build -o $(TARGET) -a -installsuffix cgo $(pkgs)
 
@@ -41,6 +41,7 @@ test:
 
 get_dep:
 	@echo "... getting dependencies"
+	@dep ensure
 	@$(GO) get -d
 
 docker: docker_build docker_push

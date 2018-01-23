@@ -3,3 +3,6 @@
 /.tarballs
 /minio_exporter
 *.tar.gz
+Gopkg.lock
+*.iml
+/vendor

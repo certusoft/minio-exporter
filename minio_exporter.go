@@ -112,9 +112,13 @@ func (e *MinioExporter) Collect(ch chan<- prometheus.Metric) {
 	begin := time.Now()
 	err := execute(e, ch)
 	duration := time.Since(begin)
+	err2, err2parse := err.(madmin.ErrorResponse)
 
 	var success float64
-	if err != nil {
+	if err != nil && err2parse {
+		log.Errorf("ERROR: collector failed after %fs: %s HttpCode: %s", duration.Seconds(), err, err2.Code)
+		success = 0
+	} else if err != nil {
 		log.Errorf("ERROR: collector failed after %fs: %s", duration.Seconds(), err)
 		success = 0
 	} else {
