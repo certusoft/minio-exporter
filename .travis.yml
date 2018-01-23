@@ -1,6 +1,6 @@
 language: go
 go:
-- 1.9
+- 1.8
 
 before_deploy:
 - git config --local user.name "dfredell"
